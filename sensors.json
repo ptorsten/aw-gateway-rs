@@ -1,0 +1,28 @@
+{
+    "outdoor_temp": {"class": "temperature", "unit": "°C", "value_template": "{{ value_json.outdoor_temp }}" },
+    "indoor_temp": {"class": "temperature", "unit": "°C", "value_template": "{{ value_json.indoor_temp }}" },
+    "temp_1": { "name": "outdoor1_temp", "class": "temperature", "unit": "°C", "value_template": "{{ value_json.outdoor1_temp }}" },
+    "temp_4": { "name": "vinrum_temp", "class": "temperature", "unit": "°C", "value_template": "{{ value_json.vinrum_temp }}" },
+    "temp_5": { "name": "livingroom_temp", "class": "temperature", "unit": "°C", "value_template": "{{ value_json.livingroom_temp }}" },
+    "pm25_1": {"class": "pm25", "unit": "µg/m³", "value_template": "{{ value_json.pm25_1 }}"},
+    "pm25_1_avg_24h": { "name": "outdoor_pm25_avg_24h", "class": "pm25", "unit": "µg/m³", "value_template": "{{ value_json.outdoor_pm25_avg_24h }}"},
+    "in_humidity": {"class": "humidity", "unit": "%", "value_template": "{{ value_json.in_humidity }}"},
+    "rel_barometer": {"class": "ATMOSPHERIC_PRESSURE", "unit": "hPa", "value_template": "{{ float(value_json.rel_barometer) }}"},
+    "abs_barometer": {"class": "ATMOSPHERIC_PRESSURE", "unit": "hPa", "value_template": "{{ float(value_json.abs_barometer) }}"},
+    "day_maxwind": { "class": "wind_speed", "unit": "m/s", "value_template": "{{ value_json.day_maxwind }}"},
+    "gust_speed": {"class": "wind_speed", "unit": "m/s", "value_template": "{{ value_json.gust_speed }}"},
+    "wind_speed": {"class": "wind_speed", "unit": "m/s", "value_template": "{{ value_json.wind_speed }}"},
+    "rain_rate":  {"class": "PRECIPITATION_INTENSITY", "unit": "mm/h", "value_template": "{{ value_json.rain_rate }}"},
+    "rain_day":  {"class": "PRECIPITATION", "unit": "mm", "value_template": "{{ value_json.rain_day }}"},
+    "rain_week":  {"class": "PRECIPITATION", "unit": "mm", "value_template": "{{ value_json.rain_week }}"},
+    "rain_month":  {"class": "PRECIPITATION", "unit": "mm", "value_template": "{{ value_json.rain_month }}"},
+    "rain_year":  {"class": "PRECIPITATION", "unit": "mm", "value_template": "{{ value_json.rain_year }}"},
+    "rain_event":  {"class": "PRECIPITATION", "unit": "mm", "value_template": "{{ value_json.rain_event }}"},
+    "wind_dir":  { "unit": "º", "value_template": "{{ value_json.wind_dir }}"},
+    "uv_index":  { "unit": "", "value_template": "{{ value_json.uv_index | int }}"},
+    "uv":  {"class": "IRRADIANCE", "unit": "W/m²", "value_template": "{{ value_json.uv }}"},
+    "out_humidity": {"class": "humidity", "unit": "%", "value_template": "{{ value_json.out_humidity }}" },
+    "soil_moist_1": {"class": "humidity", "unit": "%", "value_template": "{{ value_json.soil_moist_1 }}" },
+    "wh31_ch1_status": { "value_template": "{{ value_json.wh31_ch1_status | default(\"\") }}"}
+}
+

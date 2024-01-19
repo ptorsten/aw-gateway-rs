@@ -1,0 +1,25 @@
+[config]
+gateways = [
+    "192.168.1.10",
+]
+# global config for sensors
+sensors = "sensors.json"
+poll_interval_sec = 60
+
+[log]
+files = 5
+rotate_size = "50MB"
+directory = "logs"
+stdout_level = "info"
+logfile_level = "debug"
+
+[mqtt]
+user = ""
+password = ""
+host = "mqtt://mqtt.b-t.me?client_id=awgateway_local"
+keep_alive = 20
+
+[192.168.1.10]
+name = "gateway"
+# Local added sensors, gets merged with global sensor config
+sensors = "sensor_190.json"
