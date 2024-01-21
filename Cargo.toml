@@ -14,3 +14,9 @@ clokwerk = "0.4.0"
 byte-unit = { version = "5.1.2" }
 flexi_logger = { version = "0.27.3", features = ["compress"] }
 rumqttc = { version = "0.23.0", features = ["url"] }
+test-log = "0.2.14"
+
+[dev-dependencies]
+env_logger = "*"
+tracing = {version = "0.1", default-features = false}
+tracing-subscriber = {version = "0.3", default-features = false, features = ["env-filter", "fmt"]}

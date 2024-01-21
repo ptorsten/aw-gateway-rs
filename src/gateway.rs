@@ -2,7 +2,7 @@
 // Protocol:
 //   https://osswww.ecowitt.net/uploads/20210716/WN1900%20GW1000,1100%20WH2680,2650%20telenet%20v1.6.0%20.pdf
 //
-use std::{collections::HashMap, sync::{Arc, Mutex}, time::Duration};
+use std::{collections::HashMap, time::Duration};
 use std::net::{TcpStream, SocketAddr, Ipv4Addr};
 use std::str::{self, FromStr};
 use std::io::{Read, Write, Error, ErrorKind};
@@ -128,7 +128,7 @@ impl SensorGateway {
             mac_address: Option::None,
         };
 
-        gateway.update_sensor_metadata();
+        let _not_used = gateway.update_sensor_metadata();
         if let Ok(firmware) = gateway.get_firmware_version() {
             gateway.firmware = Some(firmware);
         }

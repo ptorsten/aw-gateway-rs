@@ -1,7 +1,7 @@
 use std::{fs::File, io::BufReader, collections::HashMap, sync::{Mutex, Arc}, time::Duration};
 use clokwerk::Interval;
 use flexi_logger::{LoggerHandle, Logger, Criterion, FileSpec, Naming, Cleanup, Duplicate};
-use gateway::{SensorGateway, SensorData, SensorValue, SensorMetadata};
+use gateway::{SensorGateway, SensorData, SensorValue};
 use rumqttc::{MqttOptions, Client, QoS, NetworkOptions};
 use serde::{Deserialize, Serialize};
 use serde_json::json;
@@ -137,7 +137,6 @@ struct Gateway {
     gateway: SensorGateway,
     sensor_config: Mutex<HashMap<String, SensorConfig>>,
     discovered_sensor: Mutex<HashMap<String, DiscoverySensor>>,
-    metadata: Mutex<HashMap<u32, SensorMetadata>>,
 }
 
 struct Gateways {
@@ -154,7 +153,6 @@ impl Gateway {
             sensor_config: Mutex::new(sensor_config),
             discovered_sensor: Mutex::new(HashMap::new()),
             mqtt: mqtt,
-            metadata: Mutex::new(HashMap::new()),
         }
     }
 
@@ -175,7 +173,7 @@ impl Gateway {
     }
 
     fn sent_discovery(&self, name: &str) -> bool {
-        let l_discovered = self.discovered_sensor.lock().expect("Failed to lock discovery mutex");
+        let l_discovered: std::sync::MutexGuard<'_, HashMap<String, DiscoverySensor>> = self.discovered_sensor.lock().expect("Failed to lock discovery mutex");
         l_discovered.contains_key(name)
     }
     
