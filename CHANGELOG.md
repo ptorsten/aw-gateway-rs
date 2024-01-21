@@ -1,3 +1,7 @@
+## 0.1.4 - 2024-01-20
+
+- Fix github actions
+
 ## 0.1.3 - 2024-01-20
 
 - Release build fix
