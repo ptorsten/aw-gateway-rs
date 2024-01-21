@@ -56,6 +56,14 @@ The system supports sensor config per gateway by configurating a sensor json per
 
 #### Sensor Configuration
 
+Easist way to configure sensors is to check the logs for:
+
+```[2024-01-18 07:11:04.210136 +00:00] DEBUG [src/main.rs:289] Failed to find sensor config for 098cce4ea80c3f:light - value <value>```
+
+Easist way to understand more about the sensors is to use the web interface for the gateway or read the specification at https://osswww.ecowitt.net/uploads/20210716/WN1900%20GW1000,1100%20WH2680,2650%20telenet%20v1.6.0%20.pdf
+
+My current config:
+
 ```{
     "outdoor_temp": {"class": "temperature", "unit": "°C", "value_template": "{{ value_json.outdoor_temp }}" },
     "indoor_temp": {"class": "temperature", "unit": "°C", "value_template": "{{ value_json.indoor_temp }}" },

@@ -144,7 +144,6 @@ struct Gateways {
     _mqtt: Arc<Mutex<Client>>,
 }
 
-
 impl Gateway {
     fn new(ip : String, sensor_config: HashMap<String, SensorConfig>, mqtt: Arc<Mutex<Client>>) -> Self {
         let gateway = SensorGateway::new(ip, 45000);
@@ -284,7 +283,7 @@ impl Gateway {
 
                 let config_opt = config_lock.get_mut(sensor.name());
                 if config_opt.is_none() {
-                    log::debug!("Failed to find sensor config for {}:{}", self.gateway().name(), sensor.name());
+                    log::debug!("Failed to find sensor config for {}:{} - value {:?}", self.gateway().name(), sensor.name(), sensor.value());
                     // only send data for sensors in the sensor config
                     continue;
                 }
