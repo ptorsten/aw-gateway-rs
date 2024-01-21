@@ -1,3 +1,7 @@
+## 0.1.6 - 2024-01-20
+
+- Fix workflows
+
 ## 0.1.5 - 2024-01-20
 
 - Allow full release flow to work

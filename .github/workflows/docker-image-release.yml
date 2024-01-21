@@ -23,6 +23,7 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
             type=raw,value=latest
+            type=raw,value=dev
             type=sha
 
       - name: Set up QEMU
