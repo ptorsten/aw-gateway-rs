@@ -1,3 +1,11 @@
+## 0.1.8 - 2024-01-20
+
+- Fix (again) platform releases
+
+## 0.1.7 - 2024-01-20
+
+- Fix platform releases to both arm64/amd64:
+
 ## 0.1.6 - 2024-01-20
 
 - Fix workflows
