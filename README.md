@@ -1,4 +1,6 @@
-[![Docker Image CI](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/docker-image.yml/badge.svg)](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/docker-image.yml) [![Rust](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/rust.yml)
+[![Docker CI](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/docker-image.yaml/badge.svg)](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/docker-image.yaml)
+[![Docker Release CI](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/docker-image-release.yml/badge.svg)](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/docker-image-release.yml)
+[![Rust](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/ptorsten/aw-gateway-rs/actions/workflows/rust.yml)
 
 ### Overview
 
