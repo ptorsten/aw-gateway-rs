@@ -16,7 +16,7 @@ AW-Gateway-RS is a Service to poll Ambient Weather gateways (like OBSERVER IP) a
 
 ### Installation
 
-Docker pre-build can be found here
+Docker image: ```docker pull ptorstensson/aw-gateway-rs:latest```
 
 - Configuration file is expected to be found at ```/config/settings.toml```
 - Log files will be written to ```/config/logs``` by default
