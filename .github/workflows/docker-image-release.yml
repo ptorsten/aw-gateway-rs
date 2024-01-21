@@ -10,7 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          # list of Docker images to use as base name for tags
+          images: |
+            ptorstensson/aw-gateway-rs
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=sha            
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -24,6 +38,11 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PSW }}
 
-      - name: Build & Push Image
-        run: |
-          docker buildx build --push --platform linux/amd64,linux/arm64 --tag ptorstensson/aw-gateway-rs:latest --tag ptorstensson/aw-gateway-rs:$(github.ref_name) .
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+  
