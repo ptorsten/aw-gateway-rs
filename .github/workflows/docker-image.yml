@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Release CI
 
 on:
   push:
@@ -26,4 +26,4 @@ jobs:
 
       - name: Build & Push Image
         run: |
-          docker buildx build --push --platform linux/amd64,linux/arm64 --tag ptorstensson/aw-gateway-rs:latest --tag ptorstensson/aw-gateway-rs:$(date +%s) .
+          docker buildx build --push --platform linux/amd64,linux/arm64 --tag ptorstensson/aw-gateway-rs:latest --tag ptorstensson/aw-gateway-rs:$(github.ref_name) .
