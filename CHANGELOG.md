@@ -1,3 +1,11 @@
+## 0.1.10 - 2024-01-20
+
+- Build release
+
+## 0.1.9 - 2024-01-20
+
+- Update documentation and add better debug logging
+
 ## 0.1.8 - 2024-01-20
 
 - Fix (again) platform releases
